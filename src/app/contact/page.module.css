@@ -1,0 +1,13 @@
+.image {
+    object-fit: cover;
+    animation: moveAni 3s ease alternate infinite;
+}
+
+@keyframes moveAni {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0px) scale(1.05);
+    }
+}
