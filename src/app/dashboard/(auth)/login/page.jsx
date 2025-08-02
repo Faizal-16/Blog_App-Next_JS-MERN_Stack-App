@@ -63,13 +63,12 @@ const Login = () => {
 
       <div className="flex flex-col items-center">
         {/* login with others */}
-        <h1 className="mb-2 ">Login With</h1>
+        <h1 className="mb-2 text-lg font-bold">Login With</h1>
         <button
           onClick={() => signIn("google")}
-          className="flex items-center cursor-pointer "
+          className="flex items-center cursor-pointe border-2  px-2 py-1 rounded-lg "
         >
-          {" "}
-          <Image src="/google.png" alt="google" width={30} height={30} />
+          <Image src="/google.png" alt="google" width={30} height={30} /> Google
         </button>
       </div>
     </div>

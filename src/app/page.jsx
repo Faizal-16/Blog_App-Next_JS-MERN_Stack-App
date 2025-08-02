@@ -1,5 +1,5 @@
+
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 // Metadata
 export const metadata = {
   title: "Blog App",
@@ -7,7 +7,6 @@ export const metadata = {
 };
 
 export default function Home() {
-  const router = useRouter();
   return (
     <div className="flex items-center justify-between">
       {/* text container */}
@@ -19,9 +18,9 @@ export default function Home() {
           Turning your ideas into Reality. We bring together <br /> the terms
           from the global tech industry.{" "}
         </p>
-        <button onClick={() => router.push("/blog")} className="py-3 px-5 border-none bg-[#53c28b] text-white cursor-pointer rounded-md ">
+        <a href="/blog" className="py-3 px-5 border-none bg-[#53c28b] text-white cursor-pointer rounded-md ">
           Get Started
-        </button>
+        </a>
       </div>
 
       {/* image container */}
