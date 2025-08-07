@@ -2,17 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-async function getData() {
-  const res = await fetch(`http://localhost:3000/api/posts`, {
-    cache: "no-cache",
-  });
+// async function getData() {
+//   const res = await fetch(`http://localhost:3000/api/posts`, {
+//     cache: "no-cache",
+//   });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
 // Metadata
 export const metadata = {
@@ -21,12 +21,51 @@ export const metadata = {
 };
 
 const Blog = async () => {
-  const data = await getData();
+  // const data = await getData();
+
+  const data = [
+    {
+      id: 1,
+      title: "Happy Birthday",
+      desc: "Happy birthday to you",
+      img: "/pexels.jpg",
+    },
+    {
+      id: 2,
+      title: "Mountian",
+      desc: "Mountain view",
+      img: "/pexel-2.jpg",
+    },
+    {
+      id: 3,
+      title: "Roses",
+      desc: "Rose valley",
+      img: "/pexels-3.jpg",
+    },
+    {
+      id: 4,
+      title: "Fourth post",
+      desc: "This is my fourth post",
+      img: "/pexels.jpg",
+    },
+    {
+      id: 5,
+      title: "Fifth post",
+      desc: "This is my fifth post",
+      img: "/pexels.jpg",
+    },
+    {
+      id: 6,
+      title: "Sixth post",
+      desc: "This is my sixth post",
+      img: "/pexels.jpg",
+    },
+  ];
 
   return (
     <div>
       {data.map((item) => (
-        <Link href={`/blog/${item._id}`} key={item.id}>
+        <Link href={`/blog/${item._id}`} key={item.id}  >
           <div className={`flex gap-10 mt-12 mb-24  `}>
             {/* image */}
             <div className="">

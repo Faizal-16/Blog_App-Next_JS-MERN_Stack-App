@@ -51,8 +51,5 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #bbb;
-}
-::-webkit-scrollbar-track:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: #000000;
 }
