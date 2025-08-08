@@ -1,5 +1,6 @@
 
 import Image from "next/image";
+import Link from "next/link";
 // Metadata
 export const metadata = {
   title: "Blog App",
@@ -18,9 +19,9 @@ export default function Home() {
           Turning your ideas into Reality. We bring together <br /> the terms
           from the global tech industry.{" "}
         </p>
-        <a href="/blog" className="py-3 px-5 border-none bg-[#53c28b] text-white cursor-pointer rounded-md ">
+        <Link href="/blogs" className="py-3 px-5 border-none bg-[#53c28b] text-white cursor-pointer rounded-md ">
           Get Started
-        </a>
+        </Link>
       </div>
 
       {/* image container */}
