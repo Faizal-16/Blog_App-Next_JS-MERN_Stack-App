@@ -21,6 +21,7 @@ const Blogs = () => {
                 height={400}
                 width={250}
                 className="object-contain"
+                loading="lazy"
               />
             </div>
 

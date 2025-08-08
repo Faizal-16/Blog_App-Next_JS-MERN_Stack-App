@@ -29,8 +29,9 @@ const BlogsID = ({ params }) => {
                 height={40}
                 width={40}
                 className="rounded-full"
+                loading="lazy"
               />
-              <span>{"Username"}</span>
+              <span>{post.username}</span>
             </div>
           </div>
           <div className="flex-1 h-[300px] w-full relative">
@@ -39,6 +40,7 @@ const BlogsID = ({ params }) => {
               fill={true}
               alt="Post image"
               className="object-cover"
+              loading="lazy"
             />
           </div>
         </div>
@@ -57,6 +59,7 @@ export default BlogsID;
 const data = [
   {
     id: 1,
+    username: "John Doe",
     title: "Happy Birthday",
     desc: "Happy birthday to you",
     img: "/pexels.jpg",
@@ -64,6 +67,7 @@ const data = [
   },
   {
     id: 2,
+    username: "John Doe",
     title: "Mountian",
     desc: "Mountain view",
     img: "/pexel-2.jpg",
@@ -71,6 +75,7 @@ const data = [
   },
   {
     id: 3,
+    username: "John Doe",
     title: "Roses",
     desc: "Rose valley",
     img: "/pexels-3.jpg",
@@ -78,6 +83,7 @@ const data = [
   },
   {
     id: 4,
+    username: "John Doe",
     title: "Fourth post",
     desc: "This is my fourth post",
     img: "/pexels.jpg",
@@ -85,6 +91,7 @@ const data = [
   },
   {
     id: 5,
+    username: "John Doe",
     title: "Fifth post",
     desc: "This is my fifth post",
     img: "/pexels.jpg",
@@ -92,6 +99,7 @@ const data = [
   },
   {
     id: 6,
+    username: "John Doe",
     title: "Sixth post",
     desc: "This is my sixth post",
     img: "/pexels.jpg",
