@@ -12,8 +12,8 @@ const Category = ({params}) => {
 
         {/* content */}
         <div className="flex-1 flex flex-col gap-5 justify-center ">
-          <h1 className='text-5xl '>Test</h1>
-          <p className='text-xl'>Descrition</p>
+          <h1 className='text-5xl '>{params.category}</h1>
+          <p className='text-xl'>{params.desc}</p>
           <Button title={"See More"} pad={"py-3 px-5"} url={"#"} />
         </div>
         {/* image */}

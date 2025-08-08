@@ -1,50 +1,58 @@
-'use client'
+"use client";
 import Image from "next/image";
-import { useEffect } from "react";
 
-const BlogsID = () => {
-  
+const BlogsID = ({ params }) => {
+  // Get id from params (assuming your route is like /blogs/[id])
+  const { id } = params;
 
+  // Find the blog post with matching id
+  const post = data.find((item) => item.id === parseInt(id));
 
-  return  <div className="flex flex-col gap-4 p-4">
-        <div>
-          {/* Info */}
-          <div className="flex">
-            <div className="flex-1">
-              <h1 className="text-4xl font-bold">{"Title"}</h1>
-              <p className="text-sm my-5">{"Description"}</p>
-  
-              <div className="flex items-center gap-3">
-                <Image
-                  src={"/1.png"}
-                  alt="Author avatar"
-                  height={40}
-                  width={40}
-                  className="rounded-full"
-                />
-                <span>{"Username"}</span>
-              </div>
-            </div>
-            <div className="flex-1 h-[300px] w-[200px] relative">
+  // If post not found, return a message
+  if (!post) {
+    return <div className="p-4">404-Post not found</div>;
+  }
+
+  return (
+    <div className="flex flex-col gap-4 p-4">
+      <div>
+        {/* Info */}
+        <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex-1">
+            <h1 className="text-4xl font-bold">{post.title}</h1>
+            <p className="text-sm my-5">{post.desc}</p>
+
+            <div className="flex items-center gap-3">
               <Image
-                src={"/pexels.jpg"}
-                fill={true}
-                alt="Post image"
-                className="object-cover"
+                src={"/1.png"}
+                alt="Author avatar"
+                height={40}
+                width={40}
+                className="rounded-full"
               />
+              <span>{"Username"}</span>
             </div>
           </div>
-  
-          {/* content */}
-          <div className="mt-8">
-            <p className="whitespace-pre-line">{"Content Should be here "}</p>
+          <div className="flex-1 h-[300px] w-full relative">
+            <Image
+              src={post.img}
+              fill={true}
+              alt="Post image"
+              className="object-cover"
+            />
           </div>
         </div>
+
+        {/* Content */}
+        <div className="mt-10">
+          <p>{post.content}</p>
+        </div>
       </div>
+    </div>
+  );
 };
 
 export default BlogsID;
-
 
 const data = [
   {
@@ -52,35 +60,41 @@ const data = [
     title: "Happy Birthday",
     desc: "Happy birthday to you",
     img: "/pexels.jpg",
+    content: "This is the full content for the Happy Birthday post...",
   },
   {
     id: 2,
     title: "Mountian",
     desc: "Mountain view",
     img: "/pexel-2.jpg",
+    content: "This is the full content for the Mountain view post...",
   },
   {
     id: 3,
     title: "Roses",
     desc: "Rose valley",
     img: "/pexels-3.jpg",
+    content: "This is the full content for the Rose valley post...",
   },
   {
     id: 4,
     title: "Fourth post",
     desc: "This is my fourth post",
     img: "/pexels.jpg",
+    content: "This is the full content for the fourth post...",
   },
   {
     id: 5,
     title: "Fifth post",
     desc: "This is my fifth post",
     img: "/pexels.jpg",
+    content: "This is the full content for the fifth post...",
   },
   {
     id: 6,
     title: "Sixth post",
     desc: "This is my sixth post",
     img: "/pexels.jpg",
+    content: "This is the full content for the sixth post...",
   },
 ];
